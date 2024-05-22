@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_prac/view/state_screen.dart';
+import 'package:riverpod_prac/view/shopping_screen.dart';
 import 'package:riverpod_prac/widgets/common_scaffold.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return const StateScreen();
+                return const ShoppingScreen();
               },
             ),
           ),
