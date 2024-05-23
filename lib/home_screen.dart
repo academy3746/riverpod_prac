@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_prac/view/auto_dispose_screen.dart';
 import 'package:riverpod_prac/view/family_modifier_screen.dart';
 import 'package:riverpod_prac/view/future_screen.dart';
 import 'package:riverpod_prac/view/state_notifier_screen.dart';
@@ -106,6 +107,29 @@ class HomeScreen extends StatelessWidget {
               ),
               child: const Text(
                 'FAMILY!',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            const SizedBox(height: 16.0),
+
+            /// Auto Disposer
+            ElevatedButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const AutoDisposeScreen();
+                  },
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
+              ),
+              child: const Text(
+                'DISPOSE!',
                 style: TextStyle(color: Colors.white),
               ),
             ),
