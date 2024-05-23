@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_prac/repository/new_state_repo.dart';
+import 'package:riverpod_prac/repository/state_notifier_repo.dart';
 import 'package:riverpod_prac/widgets/common_scaffold.dart';
 
-class ShoppingScreen extends ConsumerWidget {
-  const ShoppingScreen({super.key});
+class StateNotifierScreen extends ConsumerWidget {
+  const StateNotifierScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cont = ref.watch(shopping);
 
     return CommonScaffold(
-      title: 'SHOPPING SCREEN',
+      title: 'STATE NOTIFIER SCREEN',
       body: ListView(
         children: cont
             .map(

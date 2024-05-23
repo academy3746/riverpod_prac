@@ -22,6 +22,7 @@ class CommonScaffold extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         scrolledUnderElevation: 0,
+        backgroundColor: Colors.white,
         actions: actions,
       ),
       backgroundColor: Colors.white,

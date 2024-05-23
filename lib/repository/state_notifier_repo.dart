@@ -2,12 +2,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_prac/model/shopping_item_model.dart';
 
 final shopping =
-    StateNotifierProvider<ShoppingListNotifier, List<ShoppingItemModel>>(
-  (ref) => ShoppingListNotifier(),
+    StateNotifierProvider<StateNotifierRepository, List<ShoppingItemModel>>(
+  (ref) => StateNotifierRepository(),
 );
 
-class ShoppingListNotifier extends StateNotifier<List<ShoppingItemModel>> {
-  ShoppingListNotifier()
+class StateNotifierRepository extends StateNotifier<List<ShoppingItemModel>> {
+  StateNotifierRepository()
       : super(
           [
             ShoppingItemModel(
