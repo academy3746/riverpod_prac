@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_prac/view/home_screen.dart';
+import 'package:riverpod_prac/home_screen.dart';
 
 void main() {
   runApp(
@@ -18,7 +18,9 @@ class RiverApp extends StatelessWidget {
     return MaterialApp(
       title: 'River App',
       theme: ThemeData(
+        primaryColor: Colors.black,
         useMaterial3: true,
+        iconTheme: const IconThemeData(color: Colors.white),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
