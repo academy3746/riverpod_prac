@@ -3,6 +3,7 @@ import 'package:riverpod_prac/view/auto_dispose_screen.dart';
 import 'package:riverpod_prac/view/family_modifier_screen.dart';
 import 'package:riverpod_prac/view/future_screen.dart';
 import 'package:riverpod_prac/view/listen_screen.dart';
+import 'package:riverpod_prac/view/multiple_screen.dart';
 import 'package:riverpod_prac/view/select_screen.dart';
 import 'package:riverpod_prac/view/state_notifier_screen.dart';
 import 'package:riverpod_prac/view/stream_screen.dart';
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
-      title: 'HOME SCREEN',
+      title: 'RIVER DUCK',
       body: Container(
         width: MediaQuery.of(context).size.width,
         margin: const EdgeInsets.all(20.0),
@@ -62,6 +63,12 @@ class HomeScreen extends StatelessWidget {
               title: 'SELECT',
               screen: SelectScreen(),
             ),
+
+            /// Provider in Provider
+            NavigateButton(
+              title: 'MULTIPLE',
+              screen: MultipleScreen(),
+            )
           ],
         ),
       ),
