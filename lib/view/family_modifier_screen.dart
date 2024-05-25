@@ -8,7 +8,7 @@ class FamilyModifierScreen extends ConsumerWidget {
 
   @override
   Widget build(context, ref) {
-    final cont = ref.watch(family(5));
+    final cont = ref.watch(familyProvider(5));
 
     return CommonScaffold(
       title: 'FAMILY MODIFIER SCREEN',

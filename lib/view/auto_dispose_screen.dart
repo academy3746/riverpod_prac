@@ -8,7 +8,7 @@ class AutoDisposeScreen extends ConsumerWidget {
 
   @override
   Widget build(context, ref) {
-    final cont = ref.watch(dispose);
+    final cont = ref.watch(disposeProvider);
 
     return CommonScaffold(
       title: 'AUTO DISPOSE SCREEN',

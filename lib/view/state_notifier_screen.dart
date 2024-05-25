@@ -8,7 +8,7 @@ class StateNotifierScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final cont = ref.watch(shopping);
+    final cont = ref.watch(shoppingProvider);
 
     return CommonScaffold(
       title: 'STATE NOTIFIER SCREEN',
@@ -19,7 +19,7 @@ class StateNotifierScreen extends ConsumerWidget {
                 title: Text(e.name),
                 value: e.hasBought,
                 onChanged: (value) {
-                  ref.read(shopping.notifier).boughtToggle(e.name);
+                  ref.read(shoppingProvider.notifier).boughtToggle(e.name);
                 },
               ),
             )

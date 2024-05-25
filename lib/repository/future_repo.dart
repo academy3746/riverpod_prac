@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final future = FutureProvider<List<int>>(
+final futureProvider = FutureProvider<List<int>>(
   (ref) async {
     await Future.delayed(
       const Duration(seconds: 2),

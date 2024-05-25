@@ -8,7 +8,7 @@ class FutureScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final cont = ref.watch(future);
+    final cont = ref.watch(futureProvider);
 
     return CommonScaffold(
       title: 'FUTURE SCREEN',

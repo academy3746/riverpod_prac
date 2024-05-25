@@ -21,14 +21,14 @@ class _ListenScreenState extends ConsumerState<ListenScreen>
     tabCont = TabController(
       length: 10,
       vsync: this,
-      initialIndex: ref.read(listen),
+      initialIndex: ref.read(listenProvider),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     ref.listen<int>(
-      listen,
+      listenProvider,
       (prev, next) {
         if (prev != next) {
           tabCont.animateTo(next);
@@ -54,7 +54,7 @@ class _ListenScreenState extends ConsumerState<ListenScreen>
                 const SizedBox(height: 16.0),
                 ElevatedButton(
                   onPressed: () {
-                    ref.read(listen.notifier).update(
+                    ref.read(listenProvider.notifier).update(
                           (cb) => cb == 10 ? 10 : cb + 1,
                         );
                   },
@@ -72,7 +72,7 @@ class _ListenScreenState extends ConsumerState<ListenScreen>
                 const SizedBox(height: 8.0),
                 ElevatedButton(
                   onPressed: () {
-                    ref.read(listen.notifier).update(
+                    ref.read(listenProvider.notifier).update(
                           (cb) => cb == 0 ? 0 : cb - 1,
                     );
                   },

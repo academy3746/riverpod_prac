@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_prac/model/shopping_item_model.dart';
 
-final shopping =
+final shoppingProvider =
     StateNotifierProvider<StateNotifierRepository, List<ShoppingItemModel>>(
   (ref) => StateNotifierRepository(),
 );

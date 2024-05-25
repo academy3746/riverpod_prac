@@ -8,7 +8,7 @@ class StreamScreen extends ConsumerWidget {
 
   @override
   Widget build(context, ref) {
-    final cont = ref.watch(stream);
+    final cont = ref.watch(streamProvider);
 
     return CommonScaffold(
       title: 'STREAM SCREEN',
