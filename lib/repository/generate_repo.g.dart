@@ -214,5 +214,21 @@ class _GStateMultiplyProviderElement extends AutoDisposeProviderElement<int>
   @override
   int get num2 => (origin as GStateMultiplyProvider).num2;
 }
+
+String _$gStateNotifierHash() => r'6b4ecedacc6e176dc114e5394f3d816bc564a943';
+
+/// See also [GStateNotifier].
+@ProviderFor(GStateNotifier)
+final gStateNotifierProvider = NotifierProvider<GStateNotifier, int>.internal(
+  GStateNotifier.new,
+  name: r'gStateNotifierProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$gStateNotifierHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$GStateNotifier = Notifier<int>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

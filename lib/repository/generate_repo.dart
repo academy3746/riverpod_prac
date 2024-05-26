@@ -31,3 +31,21 @@ int gStateMultiply(
 }) {
   return num1 * num2;
 }
+
+@Riverpod(
+  keepAlive: true,
+)
+class GStateNotifier extends _$GStateNotifier {
+  @override
+  int build() {
+    return 0;
+  }
+
+  void increment() {
+    state++;
+  }
+
+  void decrement() {
+    state--;
+  }
+}

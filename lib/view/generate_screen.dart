@@ -21,6 +21,8 @@ class GenerateScreen extends ConsumerWidget {
       ),
     );
 
+    final state05 = ref.watch(gStateNotifierProvider);
+
     return CommonScaffold(
       title: 'RIVERPOD GENERATOR',
       body: Container(
@@ -76,6 +78,48 @@ class GenerateScreen extends ConsumerWidget {
 
             /// Family Parameters
             Text('State04: $state04'),
+            const SizedBox(height: 16.0),
+
+            /// State Notifier Provider
+            Text('State05: $state05'),
+            const SizedBox(height: 8.0),
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () =>
+                        ref.read(gStateNotifierProvider.notifier).increment(),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+                    ),
+                    child: const Text(
+                      'PLUS',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 4.0),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () =>
+                        ref.read(gStateNotifierProvider.notifier).decrement(),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+                    ),
+                    child: const Text(
+                      'MINUS',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
