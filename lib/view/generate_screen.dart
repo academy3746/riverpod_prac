@@ -10,6 +10,10 @@ class GenerateScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state01 = ref.watch(gStateProvider);
 
+    final state02 = ref.watch(gStateFutureProvider);
+
+    final state03 = ref.watch(gStateSpotFutureProvider);
+
     return CommonScaffold(
       title: 'RIVERPOD GENERATOR',
       body: Container(
@@ -20,11 +24,49 @@ class GenerateScreen extends ConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            /// Auto Dispose
             Text(
               'State01: $state01',
               style: const TextStyle(fontSize: 16.0),
             ),
             const SizedBox(height: 16.0),
+
+            /// Future & Auto Dispose
+            state02.when(
+              data: (data) {
+                return Text(
+                  'State02: $data',
+                  textAlign: TextAlign.center,
+                );
+              },
+              error: (error, stack) {
+                return Text(error.toString());
+              },
+              loading: () {
+                return const Center(
+                  child: CircularProgressIndicator.adaptive(),
+                );
+              },
+            ),
+            const SizedBox(height: 16.0),
+
+            /// Keep Alive & Do not Auto Dispose
+            state03.when(
+              data: (data) {
+                return Text(
+                  'State03: $data',
+                  textAlign: TextAlign.center,
+                );
+              },
+              error: (error, stack) {
+                return Text(error.toString());
+              },
+              loading: () {
+                return const Center(
+                  child: CircularProgressIndicator.adaptive(),
+                );
+              },
+            ),
           ],
         ),
       ),
