@@ -14,13 +14,18 @@ class GenerateScreen extends ConsumerWidget {
 
     final state03 = ref.watch(gStateSpotFutureProvider);
 
+    final state04 = ref.watch(
+      gStateMultiplyProvider(
+        num1: 3,
+        num2: 2,
+      ),
+    );
+
     return CommonScaffold(
       title: 'RIVERPOD GENERATOR',
       body: Container(
         width: MediaQuery.of(context).size.width,
-        margin: const EdgeInsets.symmetric(
-          horizontal: 20.0
-        ),
+        margin: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -67,6 +72,10 @@ class GenerateScreen extends ConsumerWidget {
                 );
               },
             ),
+            const SizedBox(height: 16.0),
+
+            /// Family Parameters
+            Text('State04: $state04'),
           ],
         ),
       ),
