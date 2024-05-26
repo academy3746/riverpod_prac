@@ -80,8 +80,25 @@ class GenerateScreen extends ConsumerWidget {
             Text('State04: $state04'),
             const SizedBox(height: 16.0),
 
+            /// Consumer Widget (Component & Part Rendering)
+            Consumer(
+              builder: (context, ref, child) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('State05: $state05'),
+                    child ?? Container(),
+                  ],
+                );
+              },
+              child: const Padding(
+                padding: EdgeInsets.only(left: 12.0),
+                child: Text('Say, Hello!'),
+              ),
+            ),
+
             /// State Notifier Provider
-            Text('State05: $state05'),
+            // Text('State05: $state05'),
             const SizedBox(height: 12.0),
             Column(
               children: [
