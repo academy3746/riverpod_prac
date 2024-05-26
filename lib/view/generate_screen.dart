@@ -82,10 +82,11 @@ class GenerateScreen extends ConsumerWidget {
 
             /// State Notifier Provider
             Text('State05: $state05'),
-            const SizedBox(height: 8.0),
-            Row(
+            const SizedBox(height: 12.0),
+            Column(
               children: [
-                Expanded(
+                SizedBox(
+                  width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () =>
                         ref.read(gStateNotifierProvider.notifier).increment(),
@@ -101,8 +102,9 @@ class GenerateScreen extends ConsumerWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: 4.0),
-                Expanded(
+                const SizedBox(height: 8.0),
+                SizedBox(
+                  width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () =>
                         ref.read(gStateNotifierProvider.notifier).decrement(),
@@ -114,6 +116,23 @@ class GenerateScreen extends ConsumerWidget {
                     ),
                     child: const Text(
                       'MINUS',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () => ref.invalidate(gStateNotifierProvider),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+                    ),
+                    child: const Text(
+                      'INVALIDATE',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
